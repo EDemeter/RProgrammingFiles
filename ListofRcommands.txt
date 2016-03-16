@@ -1,0 +1,116 @@
+library("swirl", lib.loc="/Library/Frameworks/R.framework/Versions/3.2/Resources/library")
+swirl()
+elised
+
+getwd()
+setwd()
+dir()
+list.files()
+rm()
+c(1,0.5) %makes a vector, list etc
+x<-matrix(c(3,4,5,4),nrow=2,ncol=2) %2 by 2 matrix
+paste(my_char, collapse = " ")
+paste(1:4,c("X","Y","Z"), sep ="")
+y<-rnorm(1000)
+my_data<-sample(c(y,z),100)
+sum()
+y <- x[!is.na(x)]
+x[!is.na(x) & x > 0]
+x[c(3,5,7)]
+x[-c(2, 10)] %subset vector x without 2nd or 10th element
+vect<-c(foo=11, bar=2, norf=NA)
+names(vect)
+identical(vect,vect2)
+vect["bar"]
+my_vector<-1:20
+dim(my_vector)
+attributes(my_vector)
+?matrix %access help
+my_matrix2<-matrix(1:20,4,5)
+patients<-c("Bill", "Gina", "Kelly", "Sean")
+cbind(patients, my_matrix)
+my_data<-data.frame(patients, my_matrix)
+colnames(my_data)<-cnames
+5!=7
+& operates along a vector
+&& evaluates only the first element of a vector
+isTRUE(6 > 4)
+xor()
+which()
+any()
+all()
+mean()
+evaluate(function(x){y<-length(x);x[y]},c(8,4,0))
+paste()
+d1 <- Sys.Date()
+class(d1)
+unclass(d1)
+d2<-as.Date("1969-01-01")
+
+# POSIXlt object
+t2<-as.POSIXlt(Sys.time())
+weekdays()
+months
+quarters()
+strptime() converts character vectors to POSIXlt
+t3<-"October 17, 1986 08:24"
+t4<-strptime(t3, "%B %d, %Y %H:%M")
+difftime(Sys.time(), t1, units = 'days')
+apply() %loop family - select a subset of a datafile, do something with it
+head(flags)
+lapply() %list as input, applies function to each element of list, returns list
+sapply() %simplfy result and call lapply behind scences
+
+flag_colors <- flags[, 11:17] to extract the columns containing
+| the color data and store them in a new data frame called flag_colors.
+| (Note the comma before 11:17. This subsetting command tells R that we want
+| all rows, but only columns 11 through 17.)
+
+flag_shapes <- flags[, 19:23]
+range()
+vapply(flags, class, character(1))
+use tapply() to split your data into groups based on the
+| value of some variable, then apply a function to each group.
+table(flags$landmass)
+tapply(flags$animate, flags$landmass, mean)
+tapply(flags$population, flags$red, summary)
+nrow(dataframe)
+ncol(dataframe)
+head(dataframe)
+tail(dataframe)
+summary()
+table(plants$Active_Growth_Period)
+str(plants) %structure
+sample(1:20,10,replace=TRUE)
+LETTERS
+flips<-sample(c(0,1),100,replace=TRUE,prob=c(0.3,0.7))
+rbinom() to simulate a
+| binomial random variable
+Each probability distribution in R has an r*** function (for "random"), a
+| d*** function (for "density"), a p*** (for "probability"), and q*** (for
+| "quantile").
+rbinom(1, size = 100, prob = 0.7)
+rnorm(10)
+replicate(100, rpois(5, 10))
+cm<-colMeans(my_pois)
+hist(cm)
+We do not cover the more advanced portions of graphics in R in this
+| lesson. These include lattice, ggplot2 and ggvis.
+
+plot()
+plot(x = cars$speed, y = cars$dist)
+Type data(mtcars) to load the data.
+system.time({})
+Rprof()
+summaryRprof()
+
+"AZ" %in% x
+Both the match() (returns the first appearance) and %in% (returns a Boolean) functions are designed for this.
+
+v <- c('a','b','c','e')
+
+'b' %in% v
+## returns TRUE
+
+match('b',v)
+## returns the first location of 'b', in this case: 2
